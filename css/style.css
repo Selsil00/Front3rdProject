@@ -6,54 +6,55 @@
 
 body{
     background-color: gray;
-    display:  flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
-/* display를 flex를 설정함으로써 요소를 FLexbox 컨테이너로 바꿈. justify-content를 통해서 수평 정렬, align-items를 통해서 세로 중앙 정렬,
-뷰 포트를 기준으로 화면을 채움*/
+
 .calculator {
     width: 281px;
     border: 1px solid #333;
     background-color: black;
-    padding: 5px
+    padding: 5px;
 }
 
-.calculator form{
+/* 그리드 컨테이너 */
+.calculator .keys{
     display: grid;
     grid-template-columns: repeat(4, 65px);
     grid-auto-rows: 65px;
     grid-gap: 3px;
 }
 
-.calculator form input{
+/* 버튼 스타일 */
+.calculator .keys button{
     border: 2px solid #333;
     cursor: pointer;
     font-size: 19px;
 
 }
 
-.calculator form input:hover{
+.calculator .keys button:hover{
     box-shadow: 1px 1px 2px #333;
 }
 
-.calculator form input[type = text]{
+/* 출력창은 input 유지 */
+.calculator .keys input[type=text]{
     grid-column: span 4;
+    padding-left: 5px;
 }
 
-.calculator form .clear{
+/* 상태별 색상 */
+.calculator .keys .clear{
     background-color: skyblue;
 }
 
-.calculator form .operator{
+.calculator .keys .operator{
     background-color: antiquewhite;
 }
 
-.calculator form .dot {
-    background-color:azure;
-}
-
-.calculator form .backspace{
+.calculator .keys .dot,
+.calculator .keys .backspace{
     background-color: azure;
 }
